@@ -64,9 +64,9 @@ def export_file(filename, all_movies):
             for key, value in all_movies.items():
                 row = key + "=" + value
                 file.write(row + "\n")
-		if 'genre' in row:
-		    file.write("\n")
-        
+                if 'genre' in row:
+                    file.write("\n")
+
         
         
         

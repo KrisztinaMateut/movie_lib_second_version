@@ -21,17 +21,5 @@ def show_movie(any_dict):
         for x, y in v.items():
             print('{}: {} {}'.format(x, (withSpace * (lengthKey - len(x))), y))
   
-def show_added_movie(addition):
-    
-    lengthKey = 0
-    for key, value in addition.items():
-        if len(key) > lengthKey:
-            lengthKey = len(key)
-    
-    withSpace = " "
-    for k, v in addition.items():
-        print(k)
-        for x, y in v.items():
-            print('{} {} {}'.format(x, (withSpace * (lengthKey - len(x))), y))
 
 
