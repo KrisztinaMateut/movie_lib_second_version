@@ -15,7 +15,6 @@ def import_file(filename):
                     movie[line[0]] = line[1]
         return all_movies
 
-print(import_file('film_data.ini'))
 
 '''
 def read_file(filename):
@@ -53,21 +52,19 @@ def read_file(filename):
 
     return movies
 
-    '''
-            
-def export_file(filename, all_movies):
-    with open("film_data.ini", "w") as file:
+    '''     
+def export_file(all_movies, filename):
+    with open(filename, "w") as file:
         for k, v in all_movies.items():
-            file.write("\n")
             title = k
             file.write("[" + title + "]" + "\n")
-            for key, value in all_movies.items():
+            for key, value in v.items():
                 row = key + "=" + value
                 file.write(row + "\n")
                 if 'genre' in row:
                     file.write("\n")
 
-        
+   
         
         
         
