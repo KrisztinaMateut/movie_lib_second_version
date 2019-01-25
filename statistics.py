@@ -221,8 +221,6 @@ def get_movie_by_genre(all_movies, genre):
     for movie in all_movies.items():
         if genre.lower() in (movie[1]['genre']).lower():
             filtered_by_genre.update({movie[0]: movie[1]})
-
-    
     if len(filtered_by_genre) == 0:
         return None
     else:
@@ -233,13 +231,12 @@ def get_last_oldest_of_genre(all_movies, genre):
 
     filtered_by_genre = get_movie_by_genre(all_movies, genre)
 
-    last_oldest_of_genre = get_last_oldest(filtered_by_genre)
-
-    if len(filtered_by_genre) == 0 and len(last_oldest_of_genre):
-        return None
-    else:
+    if filtered_by_genre != None:
+        last_oldest_of_genre = get_last_oldest(filtered_by_genre)
         return last_oldest_of_genre
-
+    else:
+        return None
+    
 
 def get_first_youngest(all_movies):
 
@@ -266,14 +263,12 @@ def get_first_youngest_of_genre(all_movies, genre):
 
     filtered_by_genre = get_movie_by_genre(all_movies, genre)
 
-    first_youngest_of_genre = get_first_youngest(filtered_by_genre)
-
-    if len(filtered_by_genre) == 0 and len(first_youngest_of_genre):
-        return None
+    if filtered_by_genre != None:
+       first_youngest_of_genre = get_first_youngest(filtered_by_genre)
+       return first_youngest_of_genre
     else:
-        return first_youngest_of_genre
-
-
+        return None
+    
 
 def split_and_reverse_name(any_name):
     
